@@ -1,0 +1,24 @@
+
+html{
+    font-family: 'Recursive', sans-serif;
+    color:rgb(88, 21, 21);
+    font-size: 30px;
+    
+}
+
+body {
+    max-width: 720px;
+    margin: 64px auto;
+}
+
+h1 {
+    font-display: bold;
+    width:10px
+}
+h3 {
+    text-shadow: 12pt;
+}
+body{
+    background-color: khaki;
+    text-align: center;
+}
