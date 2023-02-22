@@ -1,26 +1,34 @@
 import React from 'react';
+import { createRoot } from "react-dom/client";
+import { Homepage,AboutMe,Portfolio } from './components';
+import {BrowserRouter, Route, Link} from 'react-router-dom';
+
 
 function App() {
   return (
-    <>
-      <header>
-        <span className="name">Giovanni Goins</span>
-        <nav className="links">
-          <a className="active" href="about.html">HOME</a>
-          <a href="index.html">ABOUT</a>
-          <a href="portfolio.html">PORTFOLIO</a>
-        </nav>
-      </header>
-      <main>
-        <h2>My main goal is to develope the skills that will make me layoff proof in this economy. My mindset tells me as long as I try there is nothing I can not do.</h2>
-        <h3 className="quote">"Our greatest weakness lies in giving up. The most certain way to succeed is always to try just one more time." <br />- Thomas Edison</h3>
-      </main>
-      <footer>
-      </footer>
-    </>
+    <BrowserRouter>
+      <nav className="links">
+        <Link to="/">Homepage</Link>
+        <Link to="/about-me">About Me</Link>
+        <Link to="/portfolio">Portfolio</Link>
+      </nav>
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route path="/about-me" element={<AboutMe />} />
+        <Route path="/portfolio" element={<Portfolio />} />
+      </Routes>
+    </BrowserRouter>
   );
+
 }
 
+const appElement = document.getElementById("app");
+const root = createRoot(appElement);
+root.render(<App />);
+
 export default App;
+
+
+
 
 
